@@ -1,31 +1,27 @@
-⚙️ Features
-Initializes system clock to 40 MHz
+# Bare-Metal ADC Initialization on TM4C123G
+This project demonstrates how to configure and initialize the Analog-to-Digital Converter (ADC) in a bare-metal embedded system using the TM4C123GXL (Tiva C Series) microcontroller.
 
-Configures ADC0 sequencer 0 (SS0) for single-ended input
+# 🔧 Features
+- Initializes ADC0 for single-sample mode.
+- Uses PE3 (AIN0) as the analog input pin.
+- Configures ADC0 Sample Sequencer 0 (SS0).
+- Sets up system clock to 40MHz.
 
-Sets up Port E pin 3 (PE3) as an analog input channel
+# 📁 Files
+- main.c: Contains system clock and ADC initialization logic.
+- clock.h, wait.h: Utility headers for clock and delay configuration.
 
-Triggers ADC conversion via software
+# 🛠️ How to Build and Run
+- Board: TM4C123GXL LaunchPad
+- Toolchain: Code Composer Studio
 
-Designed for bare-metal embedded development (no RTOS or external libraries)
+## Steps:
+- Import the code into your IDE or build environment.
+- Ensure you include the provided clock.h, wait.h, and tm4c123gh6pm.h files.
+- Connect your analog signal to PE3.
+- Flash to your board and observe ADC sampling behavior.
 
+#📌 Notes
+The project does not include interrupt-based sampling or averaging.
+You can extend this by adding UART output or LED indications for ADC thresholds.
 
-🚀 Possible Extensions
-Read ADC result and convert it to voltage
-
-Display data via UART, LCD, or LEDs
-
-Trigger ADC using timers or interrupts
-
-Perform multi-channel ADC sampling
-
-📚 Skills Demonstrated
-Embedded C Programming
-
-Register-level Microcontroller Programming
-
-Analog Signal Sampling
-
-Peripheral Configuration (ADC, GPIO, Clock)
-
-Bare-Metal Development on ARM Cortex-M4
